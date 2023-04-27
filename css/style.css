@@ -1,0 +1,14 @@
+.body-app{
+  background-color: #0b0b0b;
+  margin: 0 auto;
+}
+
+h1, p, label{
+  color: aliceblue;
+}
+
+#main{
+  box-sizing: border-box;
+  display   : table;
+  float     : left;
+}

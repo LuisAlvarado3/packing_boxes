@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/indicator.css">
+    <link rel="stylesheet" href="./css/bed.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Cajas y Lotes Auto</title>
+</head>
+<body class="body-app" >
+    <center>
+        <h1>Registro  de Cajas y Lotes Automatizado</h1>
+    </center>
+    <div id="main">
+        <center>
+            <div class="indicators">
+                <div>
+                    <label class="lbl-indicator" for="box-labels"> Boxes Counter </label>
+                    <p class="p-indicator" name="box-labels" id="box-labels" >0</p>
+                </div>
+                <div>
+                    <label class="lbl-indicator" for="stowage-labels"> Stowage Counter </label>
+                    <p class="p-indicator" name="stowage-labels" id="stowage-labels" >0</p>
+                </div>
+                <div>
+                    <label class="lbl-indicator" for="batch-labels"> Batch Counter </label>
+                    <p class="p-indicator" name="batch-labels" id="batch-labels" >0</p>
+                </div>
+                <button class="btn-indicator" id="start" >Start</button>
+                <button class="btn-indicator" id="stop" >Stop</button>
+    
+            </div>
+        </center>
+        <div id="bed"></div>
+    </div>
+
+    <script src="./js/box.js"></script>
+    <script src="./js/bed.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
