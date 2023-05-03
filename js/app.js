@@ -47,11 +47,9 @@ class App{
                     this.#getArrBedsAndBoxes();
             }else{
                 this.divNumberBoxes.value = 2;
-                this.#numberBed = number;
+                this.#numberBed           = 2;
                 this.#getArrBedsAndBoxes( );
-
             }
-
         });
 
         // ----- Buttons ----- //
