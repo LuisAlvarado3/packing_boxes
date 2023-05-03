@@ -1,5 +1,5 @@
 function main(){
-    let objApp = new App( 2 );
+    let objApp = new App( );
     // objApp.mainloop();
 }
 

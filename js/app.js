@@ -6,7 +6,7 @@ class App{
     #arrBoxes = [];
     #arrBeds  = []
 
-    constructor( numberBeds = 0 ) {
+    constructor( numberBeds = 2 ) {
         this.#numberBed      = numberBeds;
         this.#boxesCounter   = 0;
         this.#stowageCounter = 0;
@@ -15,17 +15,46 @@ class App{
         this.#arrBeds  = [];
         this.timer     = Object();
 
-        this.divBeds    = document.getElementById( "bed"            );
-        this.divBoxes   = document.getElementById( "box-labels"     );
-        this.divStowage = document.getElementById( "stowage-labels" );
-        this.divBatch   = document.getElementById( "batch-labels"   );
+        this.#getDivsFromForm();
         this.#getArrBedsAndBoxes();
+        this.#applyAllEvents();
 
-        this.btnStart   = document.getElementById( "start"          );
-        this.btnStop    = document.getElementById( "stop"           );
+    }
+
+    #getDivsFromForm(){
+        this.divBeds        = document.getElementById( "bed"              );
+        this.divBoxes       = document.getElementById( "box-labels"       );
+        this.divStowage     = document.getElementById( "stowage-labels"   );
+        this.divBatch       = document.getElementById( "batch-labels"     );
+        this.divNumberBoxes = document.getElementById( "number-boxes" );
+        this.btnStart       = document.getElementById( "start"        );
+        this.btnStop        = document.getElementById( "stop"         );
         this.btnStop.disabled = true;
+    }
 
+    #applyAllEvents(){
+        // ----- Boxes ----- //
+        this.divNumberBoxes.addEventListener( "change", () => {
+            this.btnStart.disabled = false;
+            this.btnStop.disabled  =  true;
+            clearInterval( this.timer );
 
+            this.#initParams();
+            this.#clearAllBoxesInHTML();
+            let number = parseInt( this.divNumberBoxes.value );
+            if(number != NaN && number >1 ){
+                    this.#numberBed = number;
+                    this.#getArrBedsAndBoxes();
+            }else{
+                this.divNumberBoxes.value = 2;
+                this.#numberBed = number;
+                this.#getArrBedsAndBoxes( );
+
+            }
+
+        });
+
+        // ----- Buttons ----- //
         this.btnStart.addEventListener( "click", () => {
             this.#arrBoxes.forEach( (box)=>{
                 if (box.getStatus() == "active" ){
@@ -42,7 +71,12 @@ class App{
             this.btnStop.disabled  =  true;
             clearInterval( this.timer );
         });
+    }
 
+    #clearAllBoxesInHTML(){
+        while( this.divBeds.hasChildNodes() ){
+            this.divBeds.removeChild( this.divBeds.firstChild );
+        }
     }
 
     #clearPoints (){
@@ -107,6 +141,16 @@ class App{
             }
         }
         // console.log( this.#batchCounter );
+    }
+
+    #initParams(){
+        this.#numberBed      = 0;
+        this.#boxesCounter   = 0;
+        this.#stowageCounter = 0;
+        this.#batchCounter   = 0;
+        this.#arrBoxes = [];
+        this.#arrBeds  = [];
+        this.timer     = Object();
     }
 
 
