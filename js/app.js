@@ -123,7 +123,6 @@ class App{
                     this.#arrBoxes[ item-1 ].reverseStatus();
                     this.#arrBoxes[ item   ].reverseStatus();
                 }
-                console.log( itemGlobal );
                 item += 1;
             }else{
                 this.#arrBoxes[ item-1 ].reverseStatus();
