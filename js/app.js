@@ -133,7 +133,7 @@ class App{
             this.#updateDivs( itemGlobal );
 
             itemGlobal += 1;
-        }, 700);
+        }, 150);
 
     }
 
