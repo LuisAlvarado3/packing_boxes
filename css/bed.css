@@ -39,7 +39,7 @@
 
 .active{
   position: sticky;
-  border: 1px;
+  border: 1px solid;
   background-image: linear-gradient(#A945C7, #ff0084 );
   box-shadow: 0 0 10px #A945C7, 0 0 40px #A945C7, 0 0 80px #A945C7;
 }

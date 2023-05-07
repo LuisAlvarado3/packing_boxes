@@ -1,0 +1,19 @@
+.bar-stowage{
+    padding: 10px;
+    border : 10px;
+    margin : 10px;
+    border-radius: 30px;
+    
+    width : 100px;
+    height: 410px;
+    background-color: #4F3434;
+    display: inline-block;
+}
+
+.item-stowage {
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #416060;
+    display: inline-block
+}
